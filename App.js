@@ -1,10 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button, Alert } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text style={ styles.headingText}>Hello World</Text>
+      <Button title= "press me!"
+      accessibilityLabel= 'Press this button to popup an alert'
+      onPress={() => Alert.alert("you pressed the button!")}
+      color="red" />
       <StatusBar style="auto" />
     </View>
   );
@@ -13,8 +17,13 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'darksalmon',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  headingText: {
+    fontSize: 48,
+    color: 'white',
+    fontWeight: '900',
+  }
 });
